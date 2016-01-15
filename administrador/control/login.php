@@ -1,0 +1,33 @@
+<?php
+
+//metodos
+if($action=='/dologin'){
+	// variables
+	$Usuarios = new Usuarios();
+
+	$user = $_POST['username'];
+	$pass = md5($_POST['password']);
+
+	//revisamos que exista
+	$usuario = $Usuarios->getUser($user,$pass);
+
+	if($usuario!=null){
+		// todo es correcto savamos sessiones
+		$_SESSION['estado'] = 1;
+		$_SESSION['username'] = $usuario['user_usuario'];
+		$_SESSION['nombre'] = $usuario['nombre_usuario'];
+		header('Location: '.$baseurl.'administrador/');
+	}else{
+		//no existe usuario
+		header('Location: '.$baseurl.'administrador/login/incorrecto');
+	}
+}
+
+if($action=='/salir'){
+
+	session_destroy();
+	header('Location: '.$baseurl.'administrador/');
+
+}
+
+?>
