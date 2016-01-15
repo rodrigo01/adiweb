@@ -3,7 +3,7 @@ include('config-site.php');
 ?>
 <html>
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>ADi</title>
@@ -32,6 +32,7 @@ include('config-site.php');
 					<li><a href="index.php?secc=tienda">TIENDA</a></li>
 					<li><a href="index.php?secc=testimonios">TESTIMONIOS</a></li>
 					<li><a href="index.php?secc=contacto">CONTACTO</a></li>
+                                        <li><a href="administrador/index.php">ADMINISTRADOR</a></li>
 				</ul>
 				<div class="iconsocial">
 					<a href="https://www.facebook.com/arturoarellano.mx"><img src="images/fb-icon.png"></a> <a href="https://twitter.com/CoachArturoA"><img src="images/tw-icon.png"></a> <a href="https://www.instagram.com/coacharturoarellano/"><img src="images/rss-icon.png"></a> <a href="https://www.youtube.com/user/adiarturoarellano"><img src="images/gplus-icon.png"></a>
