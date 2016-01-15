@@ -6,7 +6,7 @@ RewriteCond %{SCRIPT_FILENAME} !-f
  
 RewriteRule ^administrator(.*)$ /administrador/index.php?control=administrator&action=$1
 RewriteRule ^usuario(.*)$ /administrador/index.php?control=usuario&action=$1
-RewriteRule ^login(.*)$ /administrador/index.php?control=login&action=$1
+RewriteRule ^login(.*)$ ./index.php?control=login&action=$1
 RewriteRule ^slider(.*)$ /administrador/index.php?control=slider&action=$1
 RewriteRule ^producto(.*)$ /administrador/index.php?control=producto&action=$1
 RewriteRule ^curso(.*)$ /administrador/index.php?control=curso&action=$1
