@@ -1,7 +1,5 @@
 <?php
 
-echo $action;
-
 if($action=='/' or $action==''){
 	$action = '/index';
 }
