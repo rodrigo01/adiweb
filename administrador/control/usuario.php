@@ -16,6 +16,7 @@ if($action=='/lista'){
 		// todo es correcto savamos sessiones
 		include($appViews.'template/header_secundario.php');
                 include($appViews.'administrador/admin_usuarios.php');
+                include($appViews.'template/footer.php');
 }
 
 //metodos
@@ -24,6 +25,7 @@ if($action=='/agregarusuario'){
 		// todo es correcto savamos sessiones
 		include($appViews.'template/header_secundario.php');
                 include($appViews.'administrador/usuario_agr.php');
+                include($appViews.'template/footer.php');
 }
 
 if($action=='/addusuario'){
@@ -77,6 +79,7 @@ if($action=='/addusuario'){
 if($action=='/updateusuario/'){
     include($appViews.'template/header_secundario.php');
     include($appViews.'administrador/usuario_mod.php');
+    include($appViews.'template/footer.php');
 }
 
 ?>
