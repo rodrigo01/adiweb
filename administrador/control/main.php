@@ -19,7 +19,7 @@ if(isset($_GET['action'])){
 if($control==''){
 	if(isset($_SESSION['estado']) and $_SESSION['estado']==1){
 		include($appViews.'template/header.php');
-		include($appViews.'administrador/admin_dash.php');
+		//include($appViews.'administrador/admin_dash.php');
 		include($appViews.'template/footer.php');
 	}
 	else{

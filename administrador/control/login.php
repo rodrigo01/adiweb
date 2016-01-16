@@ -5,9 +5,9 @@ if($action =='' or $action =='/'){
 }
 
 if($action == 'index'){
-	//include($appViews.'/template/header.php');
-    include($appViews.'/login.php');
-    //include($appViews.'/template/footer.php');
+    include($appViews.'template/header.php');
+    include($appViews.'login.php');
+    include($appViews.'template/footer.php');
 }
 
 //metodos
@@ -26,18 +26,18 @@ if($action=='/dologin'){
 		$_SESSION['estado'] = 1;
 		$_SESSION['username'] = $usuario['user_usuario'];
 		$_SESSION['nombre'] = $usuario['nombre_usuario'];
-		header('Location: '.$baseurl.'administrador/');
+                include($appViews.'template/header.php');
+		//include($appViews.'administrador/admin_dash.php');
+		include($appViews.'template/footer.php');
 	}else{
 		//no existe usuario
 		header('Location: '.$baseurl.'administrador/login/incorrecto');
 	}
 }
 
-if($action=='/salir'){
-
+if($action=='/logout'){
 	session_destroy();
 	header('Location: '.$baseurl.'administrador/');
-
 }
 
 ?>
