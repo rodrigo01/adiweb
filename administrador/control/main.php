@@ -24,9 +24,8 @@ if($control==''){
 	}
 	else{
 		//No esta logueado
-		include($appViews.'template/header.php');
 		include($appViews.'login.php');
-		include($appViews.'template/footer.php');
+		//header('Location: administrador/login/');
 	}
 }else{
 	// si existe un controlador

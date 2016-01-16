@@ -61,7 +61,8 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar"> 
-            <li><a href="<?php echo $baseurl?>usuario/lista">Usuarios</a></li>
+            <li><a href="<?php echo $baseurl?>administrador/usuario/lista">Usuarios</a></li>
+            <li><a href="<?php echo $baseurl?>administrador/slider">Sliders</a></li>
             <li><a href="<?php echo $baseurl?>administrador/contenido">Contenido</a></li>
             <li><a href="<?php echo $baseurl?>administrador/actividades">Cursos y/o Talleres</a></li>
             <li><a href="<?php echo $baseurl?>administrador/calendario">Calendario</a></li>

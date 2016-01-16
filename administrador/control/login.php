@@ -5,9 +5,7 @@ if($action =='' or $action =='/'){
 }
 
 if($action == 'index'){
-    include($appViews.'template/header.php');
     include($appViews.'login.php');
-    include($appViews.'template/footer.php');
 }
 
 //metodos
@@ -22,13 +20,13 @@ if($action=='/dologin'){
 	$usuario = $Usuarios->getUser($user,$pass);
 
 	if($usuario!=null){
-		// todo es correcto savamos sessiones
+		// todo es correcto salvamos sessiones
 		$_SESSION['estado'] = 1;
 		$_SESSION['username'] = $usuario['user_usuario'];
 		$_SESSION['nombre'] = $usuario['nombre_usuario'];
-                include($appViews.'template/header.php');
-		//include($appViews.'administrador/admin_dash.php');
-		include($appViews.'template/footer.php');
+
+		// si todo esta bien lo redirigira al administrador
+		header('Location: '.$baseurl.'administrador/');
 	}else{
 		//no existe usuario
 		header('Location: '.$baseurl.'administrador/login/incorrecto');
