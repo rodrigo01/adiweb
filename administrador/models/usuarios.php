@@ -1,6 +1,14 @@
 <?php 
 class Usuarios{
-
+        
+        function getUserGeneral(){
+		$Query="SELECT * FROM usuarios";
+		//die ($Query);
+		$res=mysql_query($Query);
+		return $res;
+	}
+    
+    
 	function getUser($username,$pass){
 		$sqlUser = "SELECT * FROM `usuarios` WHERE `user_usuario` LIKE '".$username."' AND `pass_usuario` LIKE '".$pass."'";
 		$resUser = mysql_query($sqlUser);
@@ -13,9 +21,36 @@ class Usuarios{
 		}
 	}
 
-	function addUser(){
-		$sqlInsert = "INSERT INTO `livehost_adiweb`.`usuarios` (`id_usuario`, `user_usuario`, `pass_usuario`, `correo_usuario`, `nombre_usuario`) 
-		VALUES (NULL, 'rodrigo01', 'dominio01', 'rodrigo01@gmail.com', 'Rodrigo Ornelas');";
+        function getUserOnly($usuario){
+                    $Query="SELECT * FROM usuarios WHERE user_usuario= '".$usuario."'";
+			//die ($Query);
+			$res=mysql_query($Query);
+			if(mysql_num_rows($res)>0){
+			$user = mysql_fetch_array($res);
+			return $user;
+                        }else{
+                                return null;
+                        }                    
+	}
+        
+        function getUserXId($id_usuario){
+                    $Query="SELECT * FROM usuarios WHERE id_usuario= '".$id_usuario."'";
+			//die ($Query);
+			$res=mysql_query($Query);
+			if(mysql_num_rows($res)>0){
+			$user = mysql_fetch_array($res);
+			return $user;
+                        }else{
+                                return null;
+                        }                    
+	}
+        
+        function addUser($usuario,$clave,$email,$nombre)
+	{      
+                $Query = "INSERT INTO usuarios (user_usuario, pass_usuario, correo_usuario, nombre_usuario) VALUES ('".$usuario."', '".$clave."', '".$email."', '".$nombre."')";
+		//die($Query);                
+		$res = mysql_query($Query);       
+		return $res;
 	}
 }
 
