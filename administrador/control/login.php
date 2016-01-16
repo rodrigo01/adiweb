@@ -5,9 +5,9 @@ if($action =='' or $action =='/'){
 }
 
 if($action == 'index'){
-	include($appViews.'/template/header.php');
+	//include($appViews.'/template/header.php');
     include($appViews.'/login.php');
-    include($appViews.'/template/footer.php');
+    //include($appViews.'/template/footer.php');
 }
 
 //metodos
