@@ -10,9 +10,9 @@ if($action=='/index'){
 	$Sliders = new Sliders();
 	$slidersList = $Sliders->getSliders();
 
-	include($appViews.'header.php');
+	include($appViews.'template/header.php');
 	include($appViews.'sliders/lista_sliders.php');
-	include($appViews.'footer.php');
+	include($appViews.'template/footer.php');
 }
 
 //metodos

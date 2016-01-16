@@ -1,24 +1,17 @@
 <?php
- include('../corelib.php');
 
-echo $action;
-echo "AQUIIIIII";
-die;
- 
 if($action =='' or $action =='/'){
 	$action = 'index';
 }
 
 if($action == 'index'){
 	include($appViews.'/template/header.php');
-        include($appViews.'/login.php');
-        include($appViews.'/template/footer.php');
+    include($appViews.'/login.php');
+    include($appViews.'/template/footer.php');
 }
 
 //metodos
 if($action=='/dologin'){
-        echo "AQUIIIIIIII";
-        die;
 	// variables
 	$Usuarios = new Usuarios();
 

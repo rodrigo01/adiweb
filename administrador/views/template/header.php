@@ -34,6 +34,9 @@
 
   <body>
 
+    
+  <body>
+
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -43,7 +46,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo $baseurl;?>administrator/">Panel de Control</a>
+          <a class="navbar-brand" href="<?php echo $baseurl;?>administrador/">Panel de Control</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -53,5 +56,17 @@
         </div>
       </div>
     </nav>
-    </body>
-</html>
+
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="<?php echo $baseurl?>administrador/slider">Sliders</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Cursos</a></li>
+            <li><a href="#">Contenido</a></li>
+            <li><a href="#">Calendarios</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

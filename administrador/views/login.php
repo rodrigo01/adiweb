@@ -33,7 +33,7 @@
   <body>
 
     <div class="container">
-      <form class="form-signin" action="<?php echo $baseurl?>administrador/control" method="POST">
+      <form class="form-signin" action="<?php echo $baseurl?>administrador/login/dologin" method="POST">
         <h2 class="form-signin-heading">Inicia Sesion</h2>
         <label for="inputEmail" class="sr-only">Usuario</label>
         <input name="username" type="text" id="inputEmail" class="form-control" placeholder="Usuario" required autofocus><br>

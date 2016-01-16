@@ -12,9 +12,14 @@ $selected = mysql_select_db($dbname,$dbhandle)
 //include_once("model/main.php");
 
 // Carga de variables de conexion global
-$appControl = 'control';
-$appViews = 'views';
-$appModel = 'model';
+$appControl = 'control/';
+$appViews = 'views/';
+$appModel = 'models/';
 $baseurl = 'http://www.arturoarellano.com/';
+
+//cargamos los modelos
+include('models/usuarios.php');
+include('models/sliders.php');
+
 
 ?>
