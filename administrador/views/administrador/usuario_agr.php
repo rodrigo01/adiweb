@@ -1,5 +1,5 @@
 	<h3>Agregar Usuario</h3>
-	<form action="<?php echo $baseurl;?>usuario/addusuario" method="POST" name="form" onSubmit="return validar_clave()">
+	<form action="<?php echo $baseurl;?>administrador/usuario/addusuario" method="POST" name="form" onSubmit="return validar_clave()">
 		<div class="form-group"><div class="row">
 			<div class="col-md-2">Nombre del Usuario</div>		
 			<div class="col-md-4"><input type="text" name="nombreUsuario" class="form-control" required/></div>
