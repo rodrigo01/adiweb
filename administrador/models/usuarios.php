@@ -52,6 +52,11 @@ class Usuarios{
 		$res = mysql_query($Query);       
 		return $res;
 	}
+
+	function updateUser($datauser){
+		$sqlUpdate = "UPDATE `livehost_adiweb`.`usuarios` SET `user_usuario` = '".$datauser['user_usuario']."', `pass_usuario` = '".$datauser['pass_usuario']."', `correo_usuario` = '".$datauser['correo_usuario']."', `nombre_usuario` = '".$datauser['nombre_usuario']."' WHERE `usuarios`.`id_usuario` = ".$datauser['id_usuario'].";";
+		mysql_query($sqlUpdate);
+	}
 }
 
 ?>

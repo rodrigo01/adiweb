@@ -1,13 +1,7 @@
 <?php
 
 if($action =='' or $action =='/'){
-	$action = 'index';
-}
-
-if($action == 'index'){
-    include($appViews.'template/header.php');
-    include($appViews.'login.php');
-    include($appViews.'template/footer.php');
+	$action = '/lista';
 }
 
 //metodos
@@ -77,6 +71,7 @@ if($action=='/addusuario'){
 }
 
 //metodo para separar el action y acciones
+// poner mucha atencion
 $explo = explode('/', $action);
 $action = $explo[1];
 $id = $explo[2];
@@ -99,6 +94,23 @@ if($action=='editarusuario'){
         // no existe el usuario
         header('Location: '.$baseurl.'administrador?error=noexiste');
     }
+}
+
+if($action=='updateusuario'){
+
+    // cargamos modelos
+    $Usuarios = new Usuarios();
+
+    //variables
+    $datauser = array();
+    $datauser['id_usuario'] = $_POST['idusuario'];
+    $datauser['nombre_usuario'] = $_POST['nombreUsuario'];
+    $datauser['user_usuario'] = $_POST['usuario'];
+    $datauser['pass_usuario'] = md5($_POST['password']);
+    $datauser['correo_usuario'] = $_POST['email'];
+
+    $Usuarios = $Usuarios->updateUser($datauser);
+    header('Location: '.$baseurl.'administrador/usuario/lista');
 }
 
 
