@@ -21,11 +21,10 @@
   <tr>
     <td><?php echo $datos['nombre_usuario']; ?></td>
     <td><?php echo $datos['user_usuario']; ?></td>
-    <td><?php echo $datos['pass_usuario']; ?></td>
     <td><?php echo $datos['correo_usuario']; ?></td>    
     <td>
-        <a class="btn btn-info" href="<?php echo $baseurl.'administrador/editarusuario/?id_usuario='.$datos['id_usuario']?>">Modificar</a> 
-      <a class="btn btn-warning" href="<?php echo $baseurl.'administrador/borrarusuario/?id_usuario='.$datos['id_usuario'];?>">Eliminar</a>
+      <a class="btn btn-info" href="<?php echo $baseurl.'administrador/usuario/editarusuario/'.$datos['id_usuario']?>">Modificar</a> 
+      <a class="btn btn-warning" href="<?php echo $baseurl.'administrador/usuario/borrarusuario/'.$datos['id_usuario'];?>">Eliminar</a>
     </td>
   </tr>
   <?php } ?>

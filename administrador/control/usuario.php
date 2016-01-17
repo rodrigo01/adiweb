@@ -76,10 +76,31 @@ if($action=='/addusuario'){
     }                 
 }
 
-if($action=='/updateusuario/'){
-    include($appViews.'template/header.php');
-    include($appViews.'administrador/usuario_mod.php');
-    include($appViews.'template/footer.php');
+//metodo para separar el action y acciones
+$explo = explode('/', $action);
+$action = $explo[1];
+$id = $explo[2];
+
+if($action=='editarusuario'){
+
+    // cargamos modelos
+    $Usuarios = new Usuarios();
+
+    //variables
+    $id_usuario = $id;
+    //print_r($explo);
+    $usuario = $Usuarios->getUserXId($id_usuario);
+
+    if($usuario!=null){
+        include($appViews.'template/header.php');
+        include($appViews.'administrador/usuario_mod.php');
+        include($appViews.'template/footer.php');
+    }else{
+        // no existe el usuario
+        header('Location: '.$baseurl.'administrador?error=noexiste');
+    }
 }
+
+
 
 ?>

@@ -1,7 +1,7 @@
 <?php 
 class Usuarios{
         
-        function getUserGeneral(){
+    function getUserGeneral(){
 		$Query="SELECT * FROM usuarios";
 		//die ($Query);
 		$res=mysql_query($Query);
@@ -21,20 +21,20 @@ class Usuarios{
 		}
 	}
 
-        function getUserOnly($usuario){
-                    $Query="SELECT * FROM usuarios WHERE user_usuario= '".$usuario."'";
-			//die ($Query);
-			$res=mysql_query($Query);
-			if(mysql_num_rows($res)>0){
-			$user = mysql_fetch_array($res);
-			return $user;
-                        }else{
-                                return null;
-                        }                    
+    function getUserOnly($usuario){
+                $Query="SELECT * FROM usuarios WHERE user_usuario= '".$usuario."'";
+		//die ($Query);
+		$res=mysql_query($Query);
+		if(mysql_num_rows($res)>0){
+		$user = mysql_fetch_array($res);
+		return $user;
+                    }else{
+                            return null;
+                    }                    
 	}
         
         function getUserXId($id_usuario){
-                    $Query="SELECT * FROM usuarios WHERE id_usuario= '".$id_usuario."'";
+                    $Query="SELECT * FROM usuarios WHERE id_usuario = '".$id_usuario."'";
 			//die ($Query);
 			$res=mysql_query($Query);
 			if(mysql_num_rows($res)>0){
