@@ -17,6 +17,7 @@ $baseurl = 'http://www.arturoarellano.com/';
 //cargamos los modelos
 include('models/usuarios.php');
 include('models/sliders.php');
+include('models/uploads.php');
 
 
 ?>

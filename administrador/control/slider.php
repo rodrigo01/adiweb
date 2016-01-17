@@ -16,34 +16,23 @@ if($action=='/index'){
 }
 
 //metodos
-if($action=='/dologin'){
-
-	// variables
-	$Usuarios = new Usuarios();
-
-	$user = $_POST['username'];
-	$pass = md5($_POST['password']);
-
-	//revisamos que exista
-	$usuario = $Usuarios->getUser($user,$pass);
-
-	if($usuario!=null){
-		// todo es correcto savamos sessiones
-		$_SESSION['estado'] = 1;
-		$_SESSION['username'] = $usuario['user_usuario'];
-		$_SESSION['nombre'] = $usuario['nombre_usuario'];
-		header('Location: '.$baseurl.'administrador/');
-	}else{
-		//no existe usuario
-		header('Location: '.$baseurl.'administrador/login/incorrecto');
-	}
+if($action=='/agregar'){
+	// plantilla para agregar
+	include($appViews.'template/header.php');
+	include($appViews.'sliders/agregar_sliders.php');
+	include($appViews.'template/footer.php');
 }
 
-if($action=='/salir'){
-
-	session_destroy();
-	header('Location: '.$baseurl.'administrador/');
-
+// metodo para guardar en base de datos un slider
+if($action=='/addslider'){
+	$Uploads = new Uploads();
 }
+
+//para actualizar el orden de los sliders
+if($action=='/updorden'){
+	// plantilla para agregar
+	print_r($_POST);
+}
+
 
 ?>
