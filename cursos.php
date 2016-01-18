@@ -1,6 +1,4 @@
-<?php 
-include('administrador/corelib.php');
-?>
+<?php include('administrador/corelib.php');?>
 
 <div class="fullcont">
 	<div class="titlebox">
