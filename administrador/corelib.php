@@ -20,5 +20,7 @@ include('models/sliders.php');
 include('models/uploads.php');
 include('models/actividades.php');
 include('models/testimonios.php');
+include('models/contactos.php');
+include('models/nosotros.php');
 
 ?>
