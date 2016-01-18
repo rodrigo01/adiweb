@@ -12,4 +12,3 @@ RewriteRule ^producto(.*)$ /administrador/index.php?control=producto&action=$1
 RewriteRule ^actividad(.*)$ /administrador/index.php?control=actividad&action=$1
 RewriteRule ^contenido(.*)$ /administrador/index.php?control=contenido&action=$1
 RewriteRule ^calendario(.*)$ /administrador/index.php?control=calendario&action=$1
-RewriteRule ^testimonio(.*)$ /administrador/index.php?control=calendario&action=$1
