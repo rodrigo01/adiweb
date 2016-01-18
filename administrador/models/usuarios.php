@@ -1,7 +1,7 @@
 <?php 
 class Usuarios{
         
-    function getUserGeneral(){
+        function getUserGeneral(){
 		$Query="SELECT * FROM usuarios";
 		//die ($Query);
 		$res=mysql_query($Query);
