@@ -1,3 +1,4 @@
+<?php echo $_GET['id'] ?>
 <div class="fullcont">
 	<div class="titlebox">
 		<h1>CURSO</h1>

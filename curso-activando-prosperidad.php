@@ -1,3 +1,4 @@
+<?php include('administrador/corelib.php');?>
 <div class="fullcont">
 	<div class="titlebox">
 		<h1>CURSO</h1>
@@ -43,4 +44,4 @@
 			</div>
 		</div>
 	</div>
-</div
+</div>

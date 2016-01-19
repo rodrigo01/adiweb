@@ -1,16 +1,17 @@
-<?php include('administrador/corelib.php') ?>
+<?php include('administrador/corelib.php');?>
+
 <div class="fullcont">
 	<div class="titlebox">
-		<h1>TALLERES</h1>
+		<h1>CURSOS</h1>
 	</div>
 	<div class="redbarlol">
 
 	</div>
 </div>
 
-<div class="fullcont">
-	<div class="row">
-             <?php
+<div class="fullcont">    
+	<div class="row">  
+            <?php
                 $objActividades=new Actividades();
                 $res=$objActividades->getActividadXTipo($tipo_actividad='taller');
                 if ($datos = mysql_fetch_array($res)){
@@ -22,8 +23,8 @@
 			<div class="curso-principal">
 				<h2 style="text-align:center;"><?php echo $datos['nombre_actividad']?></h2>
 				<p>
-                                    <?php echo $datos['contenido_actividad']?>
-				</p>				
+					<?php echo $datos['contenido_actividad']?>
+				</p>
 			</div>
 			<div class="curso-detalles">
 				<div class="curso-fecha">
@@ -35,24 +36,24 @@
 				</div>
 			</div>
 		</div>
-            <?php } ?> 
+          <?php } ?>  
 	</div>
 </div>
 
 <div class="fullcont margtop">
 	<div class="row">
-             <?php
+              <?php
                     $objActividades=new Actividades();
-                    $res=$objActividades->getActividadXTipo($tipo_actividad='curso');
-                    while ($datos = mysql_fetch_array($res)){
-              ?>
+                    $res=$objActividades->getActividadXTipo($tipo_actividad='taller');
+                    while ($datos = mysql_fetch_array($res)){                   
+                ?>
 		<div class="col-xs-6 col-sm-3">
 			<div class="smallcurso">
-				<div class="smallcurso-img"><img width="270" height="137" src="images/<?php echo $datos['img_actividad']?>"></div>
-				<div class="smallcurso-txt"><a href="#"><?php echo $datos['nombre_actividad']?></a></div>
+				<div class="smallcurso-img"><a href="seccion.php?seccion=<?php echo $datos['seccion_actividad'] ?>"><img width="270" height="137" src="images/<?php echo $datos['img_actividad']?>"></a></div>
+				<div class="smallcurso-txt"><a href="seccion.php?seccion=<?php echo $datos['seccion_actividad'] ?>"><?php echo $datos['nombre_actividad']?></a></div>
 				<div class="smallcurso-sub"><?php echo $datos['fecha_actividad']?></div>
 			</div>
 		</div>
-            <?php } ?>
+             <?php }  ?>   
 	</div>
 </div>
