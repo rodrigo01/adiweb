@@ -1,6 +1,6 @@
 <div class="fullcont">
 	<div class="titlebox">
-		<h1>CURSO</h1>
+		<h1>ACTIVIDAD</h1>
 	</div>
 	<div class="redbarlol">
 
@@ -15,11 +15,11 @@
                 if ($datos = mysql_fetch_array($res)){
                 ?>
 		<div class="col-xs-6">
-			<img src="images/<?php echo $datos['img_actividad'] ?>">
+			<img width="450px" height="350px" src="images/<?php echo $datos['img_actividad'] ?>">
 		</div>
 		<div class="col-xs-6">
 			<div class="curso-principal">
-				<h2 style="text-align:center;">ACTIVANDO TU PROSPERIDAD</h2>
+				<h2 style="text-align:center;"><?php echo $datos['nombre_actividad'] ?></h2>
 				<p>
 					<?php echo $datos['contenido_actividad'] ?>
 				</p>				
