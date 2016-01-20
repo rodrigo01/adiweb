@@ -60,7 +60,7 @@
           <ul class="nav nav-sidebar"> 
             <li><a href="<?php echo $baseurl?>usuario/lista">Usuarios</a></li>
             <li><a href="<?php echo $baseurl?>administrador/contenido">Contenido</a></li>
-            <li><a href="<?php echo $baseurl?>administrador/actividades">Cursos y/o Talleres</a></li>
+            <li><a href="<?php echo $baseurl?>actividad/actividades">Cursos y/o Talleres</a></li>
             <li><a href="<?php echo $baseurl?>administrador/calendario">Calendario</a></li>
             <li><a href="<?php echo $baseurl?>administrador/productos">Productos</a></li>
             <li><a href="<?php echo $baseurl?>administrador/testimonios">Testimonios</a></li>

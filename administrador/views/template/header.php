@@ -51,6 +51,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Perfil</a></li>
+            <li><a href="<?php echo $baseurl?>login/logout">Salir</a></li>
           </ul>
         </div>
       </div>
@@ -64,7 +65,7 @@
             <li><a href="<?php echo $baseurl?>administrador/usuario/lista">Usuarios</a></li>
             <li><a href="<?php echo $baseurl?>administrador/slider">Sliders</a></li>
             <li><a href="<?php echo $baseurl?>administrador/contenido">Contenido</a></li>
-            <li><a href="<?php echo $baseurl?>administrador/actividades">Cursos y/o Talleres</a></li>
+            <li><a href="<?php echo $baseurl?>administrador/actividad/lista">Cursos y/o Talleres</a></li>
             <li><a href="<?php echo $baseurl?>administrador/calendario">Calendario</a></li>
             <li><a href="<?php echo $baseurl?>administrador/productos">Productos</a></li>
             <li><a href="<?php echo $baseurl?>administrador/testimonios">Testimonios</a></li>
