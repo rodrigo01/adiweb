@@ -27,8 +27,8 @@
     <td><img width="270" height="137" src="<?php echo $baseurl; ?>images/<?php echo $datos['img_actividad']?>"></td>
     <td><?php echo $datos['tipo_actividad']; ?></td>
     <td>
-      <a class="btn btn-info" href="<?php echo $baseurl.'actividad/actividad/editaractividad/'.$datos['id_actividad']?>">Modificar</a>&nbsp; 
-      <a class="btn btn-warning" href="<?php echo $baseurl.'actividad/actividad/borraractividad/'.$datos['id_actividad']?>">Eliminar</a>
+      <a class="btn btn-info" href="<?php echo $baseurl.'administrador/actividad/editaractividad/'.$datos['id_actividad']?>">Modificar</a>&nbsp; 
+      <a class="btn btn-warning" href="<?php echo $baseurl.'administrador/actividad/borraractividad/'.$datos['id_actividad']?>">Eliminar</a>
     </td>
   </tr>
   <?php } ?>

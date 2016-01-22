@@ -138,4 +138,81 @@ if($action=='/addactividad'){
   }
    header('Location: '.$baseurl.'administrador');
 }
+
+//metodo para separar el action y acciones
+// poner mucha atencion
+$explo = explode('/', $action);
+$action = $explo[1];
+$id = $explo[2];
+
+if($action=='editaractividad'){
+    
+    $Actividades = new Actividades();
+    
+    //variables
+    $id_actividad=$id;
+   
+    $actividad = $Actividades->getActividadXId($id_actividad);
+
+    if($actividad!=null){
+        include($appViews.'template/header.php');
+        include($appViews.'actividad/actividad_mod.php');
+        include($appViews.'template/footer.php');
+    }else{
+        // no existe el usuario
+        header('Location: '.$baseurl.'administrador?error=noexiste');
+    }
+}
+
+if($action=='updateactividad'){
+
+    // cargamos modelos
+    $Actividades = new Actividades();
+
+    //variables
+    $datauser = array();
+    $id_actividad = $_POST['idActividad'];
+    $nombre_actividad = $_POST['nombreActividad'];
+    $costo_actividad = $_POST['costoActividad'];
+    $contenido_actividad = $_POST['contenidoActividad'];
+    $tipo_actividad = $_POST['tipoActividad'];
+    $fecha_actividad = $_POST['fechaActividad'];
+    $fecha_inicio_actividad = $_POST['fechaInicio'];
+    $fecha_fin_actividad = $_POST['fechaFin'];
+    $estado_actividad = $_POST['estadoActividad'];
+    
+    $Actividades = $Actividades->updateActividad($id_actividad,$nombre_actividad,$costo_actividad,$costo_actividad,$contenido_actividad,$tipo_actividad,$fecha_actividad,$fecha_inicio_actividad,$fecha_fin_actividad,$estado_actividad);
+    header('Location: '.$baseurl.'administrador/actividad/lista');
+}
+
+if($action=='borraractividad'){
+    
+    $Actividades = new Actividades();
+    
+    //variables
+    $id_actividad=$id;
+   
+    $actividad = $Actividades->getActividadXId($id_actividad);
+
+    if($actividad!=null){
+        include($appViews.'template/header.php');
+        include($appViews.'actividad/actividad_eli.php');
+        include($appViews.'template/footer.php');
+    }else{
+        // no existe el usuario
+        header('Location: '.$baseurl.'administrador?error=noexiste');
+    }
+}
+
+if($action=='deleteactividad'){
+
+    // cargamos modelos
+    $Actividades = new Actividades();
+
+    $id_actividad = $_POST['idActividad'];    
+    
+    $Actividades = $Actividades->deleteActividad($id_actividad);
+    header('Location: '.$baseurl.'administrador/actividad/lista');
+}
+
 ?>

@@ -8,12 +8,30 @@ class Actividades{
      $res = mysql_query($Query);       
      return $res;
  }
+ 
+ function updateActividad($id_actividad,$nombre_actividad,$costo_actividad,$costo_actividad,$contenido_actividad,$tipo_actividad,$fecha_actividad,$fecha_inicio_actividad,$fecha_fin_actividad,$estado_actividad){
+    $query = "UPDATE actividades SET nombre_actividad = '".$nombre_actividad."', costo_actividad = '".$costo_actividad."', contenido_actividad = '".$contenido_actividad."', tipo_actividad = '".$tipo_actividad."', fecha_actividad = '".$fecha_actividad."', fecha_inicio_actividad = '".$fecha_inicio_actividad."', fecha_fin_actividad = '".$fecha_fin_actividad."', estado_actividad = '".$estado_actividad."' WHERE  id_actividad='".$id_actividad."'";
+    //die($query);
+    $result=mysql_query($query);
+    return $result;
+	}
+        
+ function deleteActividad($id_actividad) {
+    $sql_delete="DELETE FROM actividades WHERE id_actividad='".$id_actividad."' ";
+    $res=mysql_query($sql_delete);
+    return $res;
+    }
 
  function getActividadXId($id_actividad){
                 $Query="SELECT * FROM actividades WHERE id_actividad= '".$id_actividad."'";
 		//die ($Query);
 		$res=mysql_query($Query);
-		return $res;                  
+		if(mysql_num_rows($res)>0){
+		$activity = mysql_fetch_array($res);
+		return $activity;
+                    }else{
+                            return null;
+                    }                               
 	}  
         
  function getActividadXSeccion($seccion_actividad){
