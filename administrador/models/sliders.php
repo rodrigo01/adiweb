@@ -24,9 +24,11 @@ class Sliders{
 		}
 	}
 
-	function addUser(){
-		$sqlInsert = "INSERT INTO `livehost_adiweb`.`usuarios` (`id_usuario`, `user_usuario`, `pass_usuario`, `correo_usuario`, `nombre_usuario`) 
-		VALUES (NULL, 'rodrigo01', 'dominio01', 'rodrigo01@gmail.com', 'Rodrigo Ornelas');";
+	function addSlider($slider){
+		$sqlAdd = "INSERT INTO `livehost_adiweb`.`sliders` (`id_slider`, `nombre_slider`, `imagen_slider`, `preview_slider`, `enlace_slider`, `orden_slider`, `activo`) 
+		VALUES (NULL, '".$slider['nombre_slider']."', '".$slider['imagen_slider']."', '".$slider['preview_slider']."', '".$slider['enlace_slider']."', '".$slider['orden_slider']."', '".$slider['activo']."');";
+		$resAdd = mysql_query($sqlAdd);
+		return mysql_insert_id();
 	}
 }
 

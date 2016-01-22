@@ -2,14 +2,9 @@
 Class Uploads{
 
 	var $onlyimages = false;
-	var $addtime = false; 
+	var $addtime = false;
 
-	public function __construct(){
-        $this->onlyimages = false;
-		$this->addtime = false;
-    }
-
-	function doUpload($target_file,$target_dir = '',$file_name = ''){
+	public function doUpload($target_file,$target_dir = '',$file_name = ''){
 
 		$itsgood = true;
 		$result = array();
@@ -25,8 +20,9 @@ Class Uploads{
 		}
 
 		if($this->addtime){
+			//echo 'Entro';
 			list($nfile,$efile) = explode('.', $file_name);
-			$file_name = $file_name.'_'.time().'.'.$efile;
+			$file_name = $nfile.'_'.time().'.'.$efile;
 		}
 
 		// enlace para directorio de suvida
@@ -52,7 +48,7 @@ Class Uploads{
 
 		// Check if $uploadOk is set to 0 by an error
 		if (!$itsgood) {
-			$result = array('status'=>0,'message'=>"No paso las pruebas");
+			$result = array('status'=>0,'message'=>$message);
 		// if everything is ok, try to upload file
 		} else {
 		    if (move_uploaded_file($_FILES[$target_file]["tmp_name"], $target_upload)) {

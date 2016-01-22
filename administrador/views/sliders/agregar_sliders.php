@@ -22,7 +22,7 @@
 	    <div class="row">
 	  		<div class="col-md-2">Activo</div>		
 	  		<div class="col-md-1">
-	  			<select class="form-control">
+	  			<select name="activo" class="form-control">
 	  				<option value="1">Si</option>
 	  				<option value="0">No</option>
 	  			</select>
