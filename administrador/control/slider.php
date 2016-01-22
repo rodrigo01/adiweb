@@ -59,7 +59,15 @@ if($action=='/addslider'){
 //para actualizar el orden de los sliders
 if($action=='/updorden'){
 	// plantilla para agregar
-	print_r($_POST);
+	$Sliders = new Sliders();
+	//print_r($_POST['orden']);
+	//actualizamos cada uno
+	foreach($_POST['orden'] as $slider_id=>$slider_orden){
+		$Sliders->updateOrden($slider_id,$slider_orden);
+	}
+
+	header('Location: '.$baseurl.'administrador/slider');
+
 }
 
 

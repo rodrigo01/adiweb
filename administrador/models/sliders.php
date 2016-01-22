@@ -14,7 +14,7 @@ class Sliders{
 	}
 
 	function getSliders(){
-		$sqlSlider = "SELECT * FROM `sliders` ORDER BY `sliders`.`nombre_slider` ASC";
+		$sqlSlider = "SELECT * FROM `sliders` WHERE activo = 1 ORDER BY `sliders`.`nombre_slider` ASC";
 		$resSlider = mysql_query($sqlSlider);
 
 		if(mysql_num_rows($resSlider)>0){
@@ -25,10 +25,15 @@ class Sliders{
 	}
 
 	function addSlider($slider){
-		$sqlAdd = "INSERT INTO `livehost_adiweb`.`sliders` (`id_slider`, `nombre_slider`, `imagen_slider`, `preview_slider`, `enlace_slider`, `orden_slider`, `activo`) 
+		$sqlAdd = "INSERT INTO `sliders` (`id_slider`, `nombre_slider`, `imagen_slider`, `preview_slider`, `enlace_slider`, `orden_slider`, `activo`) 
 		VALUES (NULL, '".$slider['nombre_slider']."', '".$slider['imagen_slider']."', '".$slider['preview_slider']."', '".$slider['enlace_slider']."', '".$slider['orden_slider']."', '".$slider['activo']."');";
 		$resAdd = mysql_query($sqlAdd);
 		return mysql_insert_id();
+	}
+
+	function updateOrden($id_slider,$orden){
+		$sqlUpadte = "UPDATE `livehost_adiweb`.`sliders` SET `orden_slider` = '$orden' WHERE `sliders`.`id_slider` = $id_slider;";
+		mysql_query($sqlUpadte);
 	}
 }
 

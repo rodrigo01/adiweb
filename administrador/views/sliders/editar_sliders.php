@@ -1,4 +1,4 @@
-<h3>Agregar Slider</h3>
+<h3>Modificar Slider</h3>
 <form action="<?php echo $baseurl;?>administrador/slider/addslider" method="POST" enctype="multipart/form-data">
 	<div class="form-group">
 	    <div class="row">
