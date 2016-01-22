@@ -26,6 +26,9 @@ if($action=='/agregar'){
 // metodo para guardar en base de datos un slider
 if($action=='/addslider'){
 	$Uploads = new Uploads();
+	print_r($_POST);
+
+	$Uploads->doUpload('imagen_grande','../images/sliders/');
 }
 
 //para actualizar el orden de los sliders
