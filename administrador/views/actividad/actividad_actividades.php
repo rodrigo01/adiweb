@@ -10,7 +10,6 @@
   <tr>
     <th>Titulo de Actividad</th>
     <th>Costo</th>
-    <th>Contenido</th>
     <th>Imagen</th>
     <th>Tipo de Actividad</th>
     <th>Acciones</th>
@@ -23,7 +22,6 @@
   <tr>
     <td><?php echo $datos['nombre_actividad']; ?></td>
     <td><?php echo $datos['costo_actividad']; ?></td>
-    <td><?php echo $datos['contenido_actividad']; ?></td>
     <td><img width="270" height="137" src="<?php echo $baseurl; ?>images/<?php echo $datos['img_actividad']?>"></td>
     <td><?php echo $datos['tipo_actividad']; ?></td>
     <td>

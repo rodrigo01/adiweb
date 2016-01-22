@@ -10,15 +10,15 @@
 		</div>
 		</div><div class="form-group"><div class="row">
 			<div class="col-md-2">Contenido de la Actividad</div>
-                        <div class="col-md-4"> <textarea class="form-control" name="contenidoActividad" id="" required><?php echo $actividad['contenido_actividad']; ?></textarea></div>
+            <div class="col-md-4"> <textarea class="form-control" name="contenidoActividad" id="" required><?php echo $actividad['contenido_actividad']; ?></textarea></div>
 		</div>
 		</div><div class="form-group"><div class="row">
 			<div class="col-md-2">Tipo de Actividad</div>
 			<div class="col-md-4"> 
                             <select name="tipoActividad" class="form-control" id="" required>
                                 <option value="">Seleccionar..</option>
-                                <option value="curso">Curso</option>
-                                <option value="taller">Taller</option>
+                                <option <?php if($actividad['tipo_actividad']=='curso'){echo 'selected';}?> value="curso">Curso</option>
+                                <option <?php if($actividad['tipo_actividad']=='taller'){echo 'selected';}?> value="taller">Taller</option>
                             </select>
                         </div>
 		</div>
@@ -39,8 +39,8 @@
 			<div class="col-md-4"> 
                             <select name="estadoActividad" class="form-control" id="" required>
                                 <option value="">Seleccione..</option>
-                                <option value="1">Activa</option>
-                                <option value="0">Inactiva</option>
+                                <option <?php if($actividad['estado_actividad']=='1'){echo 'selected';}?> value="1">Activa</option>
+                                <option <?php if($actividad['estado_actividad']=='0'){echo 'selected';}?> value="0">Inactiva</option>
                             </select>
                         </div>
 		</div>
@@ -49,3 +49,6 @@
 			<input type="submit" class="btn btn-success" value="Modificar" class="btn btn-succcess" name="submit"/>
 		</div>
 	</form>
+<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+						

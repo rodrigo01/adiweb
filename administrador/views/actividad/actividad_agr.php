@@ -53,3 +53,6 @@
 			<input type="submit" class="btn btn-success" value="Agregar" class="btn btn-succcess" name="submit"/>
 		</div>
 	</form>
+	<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+						
