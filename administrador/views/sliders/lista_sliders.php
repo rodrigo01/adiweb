@@ -20,7 +20,7 @@
 		<td class="col-md-1">
 			<input class="form-control" type="number" name="orden[<?php echo $slider['id_slider'];?>]" value="<?php echo $slider['orden_slider'];?>">
 		</td>
-		<td><a c class="btn btn-info" href="<?php echo $baseurl;?>administrador/slider/editar/?slider=<?php echo $slider['id_slider'];?>">Editar</a></td>
+		<td><a c class="btn btn-info" href="<?php echo $baseurl;?>administrador/slider/editar/<?php echo $slider['id_slider'];?>">Editar</a></td>
 	</tr>
 	<?php }?>
 </table>
