@@ -85,7 +85,7 @@ if($action=='/addactividad'){
     $Uploads->addtime = 1;
 
     // cargamos la imagen
-    $archivoResultado = $Uploads->$Uploads->doUpload('fileToUpload','../images/'); // el primero corresponde a que $_FILES['fileToUpload'] y el segundo a la ruta de subida
+    $archivoResultado = $Uploads->doUpload('fileToUpload','../images/'); // el primero corresponde a que $_FILES['fileToUpload'] y el segundo a la ruta de subida
     
     if($archivoResultado['status']==1){
         // la subida es correcta
@@ -95,7 +95,7 @@ if($action=='/addactividad'){
     }
     
     if(sizeof($errors)==0){ 
-        //$objActividad = new Actividades();
+        $objActividad = new Actividades();
         //$res = $objActividad->getActividadXSeccion($_POST['nombreActividad']); // buscas una actividad por nombres pero es seccion?
         //$seccion_actividad = $datos['seccion_actividad'];
         
