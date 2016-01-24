@@ -113,6 +113,37 @@ if($action=='updateusuario'){
     header('Location: '.$baseurl.'administrador/usuario/lista');
 }
 
+if($action=='borrarusuario'){
+    
+     // cargamos modelos
+    $Usuarios = new Usuarios();
+
+    //variables
+    $id_usuario = $id;
+    //print_r($explo);
+    $usuario = $Usuarios->getUserXId($id_usuario);
+
+    if($usuario!=null){
+        include($appViews.'template/header.php');
+        include($appViews.'administrador/usuario_eli.php');
+        include($appViews.'template/footer.php');
+    }else{
+        // no existe el usuario
+        header('Location: '.$baseurl.'administrador?error=noexiste');
+    }
+}
+
+if($action=='deleteusuario'){
+
+    // cargamos modelos
+    $Usuarios = new Usuarios();
+
+    $id_usuario = $_POST['idUsuario'];    
+    
+    $Usuarios = $Usuarios ->deleteUser($id_usuario);
+    header('Location: '.$baseurl.'administrador/usuario/lista');
+}
+?>
 
 
 ?>
