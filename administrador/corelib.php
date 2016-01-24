@@ -22,5 +22,6 @@ include('models/actividades.php');
 include('models/testimonios.php');
 include('models/contactos.php');
 include('models/nosotros.php');
+include('models/productos.php');
 
 ?>
