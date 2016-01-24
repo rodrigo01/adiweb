@@ -31,8 +31,8 @@
 					<?php echo $datos['fecha_actividad']?>
 				</div>
 				<div class="curso-ins">
-					<h3>MX$<?php echo $datos['costo_actividad']?>.00</h3>
-					<a href="#" class="btn-insc">INSCRIBIRSE</a>
+					<h3>MX$<?php echo $datos['costo_actividad'] ?>.00</h3>
+					<a href="registro.php?nombre_actividad=<?php echo $datos['nombre_actividad'] ?>" class="btn-insc">INSCRIBIRSE</a>
 				</div>
 			</div>
 		</div>

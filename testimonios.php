@@ -35,9 +35,20 @@
 						<p><b><?php echo $datos['cliente_testimonio']?></b></p>
 					</div>
 				</div>
-
-			</div>
+			</div>                        
 		</div>
 	</div>
 </div>
 <?php } ?>
+<div class="fullcont margtop">
+	<div id="boxnosotros" class="testimonicent">
+		<div class="row">
+			<div class="col-xs-6">
+				<a href="index.php?secc=testimonio_agr" class="btn-insc">COMENTENOS SU TESTIMONIO</a>
+			</div>
+			<div class="col-xs-6">
+				"Con tu testimonio animaras a otros a realizar nuestros cursos y talleres. Muchas gracias"
+			</div>                        
+		</div>
+	</div>
+</div>

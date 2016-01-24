@@ -51,6 +51,7 @@ include('administrador/corelib.php');
 						<input type="text" placeholder="Buscar cursos">
 					</div>
 				</div>
+
 				-->
 			</div>
 		</div>
@@ -60,14 +61,14 @@ include('administrador/corelib.php');
 		<div id="content">
 			<div class="margcont">
 				<?php
-				$seccion = '';
-				if(isset($_GET['seccion'])){
-					$seccion = trim($_GET['seccion']);
+				$inscripcion = '';
+				if(isset($_GET['nombre_actividad'])){
+					$inscripcion = trim($_GET['nombre_actividad']);
 				}
-				if($seccion==''){
+				if($inscripcion==''){
 					include('principal.php');
 				}else{
-					include('curso.php');
+					include('inscripcion.php');
 				}
 				?>
 			</div>

@@ -30,7 +30,11 @@
 				</div>
 				<div class="caldata">
 					<ul>
-					
+					<ul>
+					<li><a href="index.php?secc=curso-activando-prosperidad">9 y 10 : Activando tu Prosperidad - Mexicali (ARTURO ARELLANO)</a></li>
+					<li><a href="index.php?secc=curso-juventud-plenitud">2 y 23 : Juventud en Plenitud - Mexicali (ARTURO ARELLANO)</a></li>					
+					<li><a href="#">28 y 29 : Diplomado en comunicaci&oacute;n  - Mexicali (ARTURO ARELLANO)</a></li>
+					</ul>
 					</ul>
 				</div>
 			</div>
@@ -44,6 +48,8 @@
 				<div class="caldata">
 					<ul>
 					<li><a href="index.php?secc=curso-foto-lectura">19 y 20 : Fotolectura<a></li>
+                                        <li><a href="index.php?secc=curso-foto-lectura">21 y 22 : Fotolectura<a></li>
+                                        <li><a href="index.php?secc=curso-foto-lectura">28 y 29 : Fotolectura<a></li>
 					</ul>
 				</div>
 			</div>

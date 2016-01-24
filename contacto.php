@@ -2,7 +2,7 @@
 
 <div class="fullcont">
 	<div class="titlebox">
-		<h1>CONTÁCTANOS</h1>
+		<h2>CONTÁCTANOS</h2>
 	</div>
 	<div class="redbarlol">
 
@@ -10,7 +10,7 @@
 </div>
 <?php
   $objContactos=new Contactos();
-  $res=$objContactos->getContactos();
+  $res=$objContactos->get();
   if ($datos = mysql_fetch_array($res)){
 ?>
 <div class="fullcont">
