@@ -41,6 +41,12 @@ class Actividades{
 		return $res;                  
 	} 
         
+ function getActividadXNombre($nombre_actividad){
+                $Query="SELECT * FROM actividades WHERE nombre_actividad= '".$nombre_actividad."'";
+		//die ($Query);
+		$res=mysql_query($Query);
+		return $res;                  
+	} 
     
  function getActividadXTipo($tipo_actividad){
                 $Query="SELECT * FROM actividades WHERE tipo_actividad= '".$tipo_actividad."'";

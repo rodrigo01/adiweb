@@ -21,6 +21,14 @@ function getProductoXId($id_producto){
                     }                               
 	}
         
+function getProductoXTitulo($titulo_producto){
+                $Query="SELECT * FROM productos WHERE titulo_producto= '".$titulo_producto."'";
+		//die ($Query);
+		$res=mysql_query($Query);
+		return $res;                            
+	}
+        
+        
 function addProducto($tituloProducto,$informacionProducto,$precioProducto,$envioProducto,$estadoProducto,$imgProducto){
      $Query = "INSERT INTO productos (titulo_producto, info_producto, precio_producto, envio_producto, estado_producto, imagen_producto) VALUES ('".$tituloProducto."', '".$informacionProducto."', '".$precioProducto."', '".$envioProducto."', '".$estadoProducto."', '".$imgProducto."')";
      //die($Query);                
