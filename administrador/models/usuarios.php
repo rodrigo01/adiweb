@@ -57,6 +57,12 @@ class Usuarios{
 		$sqlUpdate = "UPDATE `livehost_adiweb`.`usuarios` SET `user_usuario` = '".$datauser['user_usuario']."', `pass_usuario` = '".$datauser['pass_usuario']."', `correo_usuario` = '".$datauser['correo_usuario']."', `nombre_usuario` = '".$datauser['nombre_usuario']."' WHERE `usuarios`.`id_usuario` = ".$datauser['id_usuario'].";";
 		mysql_query($sqlUpdate);
 	}
+        
+        function deleteUser($id_usuario) {
+            $sql_delete="DELETE FROM usuarios WHERE id_usuario='".$id_usuario."' ";
+            $res=mysql_query($sql_delete);
+            return $res;
+        }
 }
 
 ?>
