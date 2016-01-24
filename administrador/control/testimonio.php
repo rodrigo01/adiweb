@@ -71,6 +71,55 @@ if($action=='/addtestimonio'){
    
 }// fin de metodo
 
+if($action=='/addtestimonioclient'){
+    
+    //////////////////////////////////////////////////////////////
+    if(isset($_POST['contenidoTestimonio']) and strlen(trim($_POST['contenidoTestimonio']))>=3){
+		$contenidoTestimonio= $_POST['contenidoTestimonio'];
+    }else{
+		$errors[] = 'Error';
+    }
+    
+    //////////////////////////////////////////////////////////////
+    if(isset($_POST['videoTestimonio']) and strlen(trim($_POST['videoTestimonio']))>=3){
+		$videoTestimonio = $_POST['videoTestimonio'];
+    }else{
+		$errors[] = 'Error';
+    }
+    
+    //////////////////////////////////////////////////////////////
+    if(isset($_POST['clienteTestimonio']) and strlen(trim($_POST['clienteTestimonio']))>=3){
+		$clienteTestimonio = $_POST['clienteTestimonio'];
+    }else{
+		$errors[] = 'Error';
+    }
+    
+    // cargamos classe para subir archivos y definimos que nos agregue el tiempo al final 
+    //(para evitar que existan archivos duplicadas y no nos rompa el proceso)
+    $Uploads = new Uploads();
+    $Uploads->addtime = 1;
+
+    // cargamos la imagen
+    $archivoResultado = $Uploads->doUpload('fileToUpload','../images/'); // el primero corresponde a que $_FILES['fileToUpload'] y el segundo a la ruta de subida
+    
+    if($archivoResultado['status']==1){
+        // la subida es correcta
+        $imgTestimonio = $archivoResultado['filename'];
+    }else{
+        $errors[] = 'Error en subida de archivo/ talvez no se subio';
+    }
+    
+    if(sizeof($errors)==0){ 
+        $objTestimonio = new Testimonios();
+                
+        $res = $objTestimonio->AddTestimonio($contenidoTestimonio,$imgTestimonio,$videoTestimonio,$clienteTestimonio);
+        header('Location: '.$baseurl);
+    }else{
+        header('Location: '.$baseurl);
+    }
+   
+}// fin de metodo
+
 //metodo para separar el action y acciones
 // poner mucha atencion
 $explo = explode('/', $action);
