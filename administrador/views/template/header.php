@@ -69,6 +69,7 @@
             <li><a href="#">Calendario</a></li>
             <li><a href="<?php echo $baseurl?>administrador/testimonio/lista">Testimonios</a></li>
             <li><a href="<?php echo $baseurl?>administrador/nosotros/lista">Nosotros</a></li>
+            <li><a href="<?php echo $baseurl?>administrador/producto/lista">Productos</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
