@@ -6,7 +6,11 @@
 		</div>
 		</div><div class="form-group"><div class="row">
 			<div class="col-md-2">Informacion del Producto</div>
-                        <div class="col-md-4"> <textarea class="form-control" name="informacionProducto" id=""></textarea></div>
+                        <div class="col-md-4"> <textarea class="form-control" id="area1" name="informacionProducto" id=""></textarea></div>
+		</div>
+		</div><div class="form-group"><div class="row">
+			<div class="col-md-2">Codigo HTML para Boton de Compra</div>
+                        <div class="col-md-4"> <textarea class="form-control" name="botonCompra" id="">Copie y Pegue Aqui el Codigo HTML Para Generar Boton de Compra</textarea></div>
 		</div>
 		</div><div class="form-group"><div class="row">
 			<div class="col-md-2">Precio del Producto</div>		
@@ -36,4 +40,8 @@
 		</div>
 	</form>
 	<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+        <script type="text/javascript">
+            bkLib.onDomLoaded(function() {
+            new nicEditor().panelInstance('area1');            
+        });
+        </script>

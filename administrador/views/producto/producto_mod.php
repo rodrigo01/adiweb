@@ -6,7 +6,11 @@
 		</div>
 		</div><div class="form-group"><div class="row">
 			<div class="col-md-2">Informacion del Producto</div>
-                        <div class="col-md-4"> <textarea class="form-control" name="informacionProducto"><?php echo $producto['info_producto'] ?></textarea></div>
+                        <div class="col-md-4"> <textarea class="form-control" id="area1" name="informacionProducto"><?php echo $producto['info_producto'] ?></textarea></div>
+		</div>
+		</div><div class="form-group"><div class="row">
+			<div class="col-md-2">HTML de Boton de Compra</div>
+                        <div class="col-md-4"> <textarea class="form-control" name="botonCompra"><?php echo $producto['boton_producto'] ?></textarea></div>
 		</div>
 		</div><div class="form-group"><div class="row">
 			<div class="col-md-2">Precio del Producto</div>		
@@ -37,5 +41,9 @@
 		</div>
 	</form>
 	<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+        <script type="text/javascript">
+            bkLib.onDomLoaded(function() {
+            new nicEditor().panelInstance('area1');            
+        });
+        </script>
 
