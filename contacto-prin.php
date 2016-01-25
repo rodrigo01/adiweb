@@ -1,20 +1,21 @@
+<?php
+  $objContactos=new Contactos();
+  $res=$objContactos->get();
+  if ($datos = mysql_fetch_array($res)){
+?>
 <div class="fullcont">
-
 	<div id="boxnosotros" style="padding:15px;">
 		<h1 style="text-align: center; font-weight: bold;">CONT&Aacute;CTANOS</h1>
 		<div class="row">
 			<div class="col-xs-6">
 				<b><p>
-					Visite nuestras oficinas para atenderlo personalmente.
+					<?php echo $datos['atencion_contacto'] ?>
 				</p>
 				<p>
-					Teléfono: 686-556-4030<br>
-					Lago Nasser #1242,<br>
-					Jardines del Lago C.P. 21330,<br>
-					Mexicali, Baja California, México. <br>
+					<?php echo $datos['direccion_contacto'] ?><br>
 				</p></b>
 				<div>
-					<iframe src="//maps.google.com/maps?v=2&amp;f=q&amp;ie=UTF8&amp;t=m&amp;iwloc=&amp;q=Lago+Nasser+%231242%2c+Jardines+del+Lago+C.P.+21330%2c+++Mexicali%2c+Baja+California%2c+M%c3%a9xico.&amp;hl=en&amp;z=16&amp;source=s_q&amp;output=embed" style="width: 100%;" height="200" scrolling="no"></iframe>	
+					<iframe src="<?php echo $datos['map_contacto'] ?>" style="width: 100%;" height="200" scrolling="yes"></iframe>	
 				</div>
 				
 			</div>
@@ -23,7 +24,7 @@
 					<form action="index.php?secc=contacto" method="POST">
 						<div class="row formpad">
 							<div class="col-xs-4 col-sm-4">
-								<b>Nombre</b>
+								<b><?php echo $datos['nombre_contacto'] ?></b>
 							</div>
 							<div class="col-xs-4 col-sm-6">
 								<input type="text" class="form-control" name="nombre">
@@ -31,7 +32,7 @@
 						</div>
 						<div class="row formpad">
 							<div class="col-xs-4 col-sm-4">
-								<b>Correo</b>
+								<b><?php echo $datos['correo_contacto'] ?></b>
 							</div>
 							<div class="col-xs-4 col-sm-6">
 								<input type="text" class="form-control" name="correo">
@@ -39,7 +40,7 @@
 						</div>
 						<div class="row formpad">
 							<div class="col-xs-4 col-sm-4">
-								<b>Tel&eacute;fono</b>
+								<b><?php echo $datos['telefono_contacto'] ?></b>
 							</div>
 							<div class="col-xs-4 col-sm-6">
 								<input type="text" class="form-control" name="telefono">
@@ -47,7 +48,7 @@
 						</div>
 						<div class="row formpad">
 							<div class="col-xs-4 col-sm-4">
-								<b>Como te enteraste</b>
+								<b><?php echo $datos['como_te_enteraste_contacto'] ?></b>
 							</div>
 							<div class="col-xs-4 col-sm-6">
 								<textarea class="form-control" name="como"></textarea>
@@ -55,7 +56,7 @@
 						</div>
 						<div class="row formpad">
 							<div class="col-xs-4 col-sm-4">
-								<b>Comentarios</b>
+								<b><?php echo $datos['comentarios_contactos'] ?></b>
 							</div>
 							<div class="col-xs-4 col-sm-6">
 								<textarea class="form-control" name="comentarios"></textarea>
@@ -75,3 +76,4 @@
 		</div>
 	</div>
 </div>
+<?php } ?>

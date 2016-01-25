@@ -1,48 +1,45 @@
+
 <div class="fullcont">
+    <?php
+                $objActividades=new Actividades();
+                $res=$objActividades->getActividad();
+                if ($datos = mysql_fetch_array($res)){
+   ?>
 	<div class="prin-taller">
-		<a href="index.php?secc=curso-foto-lectura"><img src="images/cursos-prin-big.jpg"></a>
+		<a href="seccion.php?seccion=<?php echo $datos['seccion_actividad'] ?>"><img src="images/<?php echo $datos['img_actividad']?>"></a>
 	</div>
 	<div class="prin-detalle">
-		<h2>FOTOLECTURA</h2>
+		<h2><?php echo $datos['nombre_actividad']?></h2>
 		<div>
-			<p>Lorem ipsum dolor sit amet, consectetur
-adipiscing elit. Cras ecitur diam at mi
-ornare, sed ultrices dui finibus. Nulla id
-turpis lectus. In id varius felis. </p>
+			<p><?php echo $datos['contenido_actividad']?></p>
 		</div>
 		<div class="curso-prin-fecha">
-			19 y 20 de Marzo 2016
+			<?php echo $datos['fecha_actividad']?>
 		</div>
 		<div class="curso-prin-ins">
-			<h2>MX$222.00</h2>
-			<a href="index.php?secc=curso-foto-lectura" class="btn-insc">INSCRIBIRSE</a>
+			<h2>MX$<?php echo $datos['costo_actividad']?>.00</h2>
+			<a href="registro.php?nombre_actividad=<?php echo $datos['nombre_actividad'] ?>" class="btn-insc">INSCRIBIRSE</a>
 		</div>
 	</div>
-
+<?php } ?>
 </div>
 
 <div class="fullcont margtop">
 	<div class="row">
+            <?php
+                    $objActividades=new Actividades();
+                    $res=$objActividades->getActividad();
+                    while ($datos = mysql_fetch_array($res)){                   
+             ?>
 		<div class="col-xs-6 col-md-4">
 			<div class="smallcurso">
-				<div class="smallcurso-img"><a href="index.php?secc=curso-activando-prosperidad"><img src="images/cursos-prin-tab3.jpg"></a></div>
-				<div class="smallcurso-txt"><a href="index.php?secc=curso-activando-prosperidad">ACTIVANDO TU PROSPERIDAD</a></div>
-				<div class="smallcurso-sub">9 y 10 DE ENERO</div>
+				<div class="smallcurso">
+				<div class="smallcurso-img"><a href="seccion.php?seccion=<?php echo $datos['seccion_actividad'] ?>"><img width="270" height="137" src="images/<?php echo $datos['img_actividad']?>"></a></div>
+				<div class="smallcurso-txt"><a href="seccion.php?seccion=<?php echo $datos['seccion_actividad'] ?>"><?php echo $datos['nombre_actividad']?></a></div>
+				<div class="smallcurso-sub"><?php echo $datos['fecha_actividad']?></div>
+                                </div>
 			</div>
-		</div>
-		<div class="col-xs-6 col-md-4">
-			<div class="smallcurso">
-				<div class="smallcurso-img"><a href="index.php?secc=curso-juventud-plenitud"><img src="images/cursos-prin-tab2.jpg"></a></div>
-				<div class="smallcurso-txt"><a href="index.php?secc=curso-juventud-plenitud">JUVENTUD EN PLENITUD</a></div>
-				<div class="smallcurso-sub">23 y 24 DE ENERO</div>
-			</div>
-		</div>
-		<div class="col-xs-6 col-md-4">
-			<div class="smallcurso">
-				<div class="smallcurso-img"><a href="index.php?secc=curso-foto-lectura"><img src="images/Fotolectura_FotoPreview.jpg"></a></div>
-				<div class="smallcurso-txt"><a href="index.php?secc=curso-foto-lectura">FOTO LECTURA</a></div>
-				<div class="smallcurso-sub">19 y 20 DE Marzo</div>
-			</div>
-		</div>
+		</div>		
+            <?php } ?>
 	</div>
 </div>

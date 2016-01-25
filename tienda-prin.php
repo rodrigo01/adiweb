@@ -2,13 +2,13 @@
 <div class="fullcont">
 	<div>
 		<h2>TIENDA ONLINE</h2>
-	</div>
-    <?php
+	</div>    
+	<div class="row">
+            <?php
                     $objProductos=new Productos();
                     $res=$objProductos->getProductos();
                     while ($datos = mysql_fetch_array($res)){
-   ?>
-	<div class="row">
+            ?>
 		<div class="col-xs-6">
 			<div id="boxnosotros">
 				<div class="feature-prod-img">
@@ -29,16 +29,11 @@
 						Tiempo de envio <?php echo $datos['envio_producto']?>
 					</p>
                                         <div>
-                                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                                            <input type="hidden" name="cmd" value="_s-xclick">
-                                            <input type="hidden" name="hosted_button_id" value="JUVHQ4RVKEMAE">
-                                            <input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                                            <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
-                                        </form>
+                                         <?php echo $datos['boton_producto']?>
                                         </div>
 				</div>				
 			</div>
 		</div>
-	  </div>
-    <?php } ?>
+	     <?php } ?>
+        </div> 
 </div>
