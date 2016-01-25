@@ -38,6 +38,13 @@ if($action=='/addproducto'){
 		$errors[] = 'Error';
     }
     
+     //////////////////////////////////////////////////////////////
+    if(isset($_POST['botonCompra']) and strlen(trim($_POST['botonCompra']))>=3){
+		$compraProducto= $_POST['botonCompra'];
+    }else{
+		$errors[] = 'Error';
+    }
+    
     //////////////////////////////////////////////////////////////
     if(isset($_POST['precioProducto']) and strlen(trim($_POST['precioProducto']))>=3){
 		$precioProducto = $_POST['precioProducto'];
@@ -78,7 +85,7 @@ if($action=='/addproducto'){
         //$res = $objActividad->getActividadXSeccion($_POST['nombreActividad']); // buscas una actividad por nombres pero es seccion?
         //$seccion_actividad = $datos['seccion_actividad'];
         
-        $res = $objProducto->addProducto($_POST['tituloProducto'], $_POST['informacionProducto'], $_POST['precioProducto'], $_POST['envioProducto'], $_POST['estadoProducto'], $imgProducto);
+        $res = $objProducto->addProducto($_POST['tituloProducto'], $_POST['informacionProducto'], $_POST['botonCompra'], $_POST['precioProducto'], $_POST['envioProducto'], $_POST['estadoProducto'], $imgProducto);
         header('Location: '.$baseurl.'administrador/producto/lista');
     }else{
         header('Location: '.$baseurl.'administrador');
@@ -121,6 +128,7 @@ if($action=='updateproducto'){
     $idProducto = $_POST['idProducto'];
     $tituloProducto = $_POST['tituloProducto'];
     $informacionProducto = $_POST['informacionProducto'];
+    $botonCompra = $_POST['botonCompra'];
     $precioProducto = $_POST['precioProducto'];
     $envioProducto = $_POST['envioProducto'];
     $estadoProducto = $_POST['estadoProducto'];
@@ -139,7 +147,7 @@ if($action=='updateproducto'){
         $errors[] = 'Error en subida de archivo/ talvez no se subio';
     }
     
-    $Productos = $Productos->updateProducto($idProducto,$tituloProducto,$informacionProducto,$precioProducto,$envioProducto,$estadoProducto,$imgProducto);
+    $Productos = $Productos->updateProducto($idProducto,$tituloProducto,$informacionProducto,$botonCompra,$precioProducto,$envioProducto,$estadoProducto,$imgProducto);
     header('Location: '.$baseurl.'administrador/producto/lista');
 }
 
