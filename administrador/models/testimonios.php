@@ -19,7 +19,14 @@ function getTestimonioXId($id_testimonio){
                     }else{
                             return null;
                     }                               
-	}         
+	}  
+        
+function getTestimonioXIdEspecifico($id_testimonio){
+                $Query="SELECT * FROM testimonios WHERE id_testimonio= '".$id_testimonio."'";
+		//die ($Query);
+		$res=mysql_query($Query);
+		return $res;                              
+	}  
         
 function AddTestimonio($contenidoTestimonio, $imgTestimonio, $videoTestimonio, $clienteTestimonio){
      $Query = "INSERT INTO testimonios (contenido_testimonio, img_testimonio, video_testimonio, cliente_testimonio) VALUES ('".$contenidoTestimonio."', '". $imgTestimonio."', '".$videoTestimonio."', '".$clienteTestimonio."')";

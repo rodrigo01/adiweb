@@ -29,15 +29,15 @@ function getProductoXTitulo($titulo_producto){
 	}
         
         
-function addProducto($tituloProducto,$informacionProducto,$precioProducto,$envioProducto,$estadoProducto,$imgProducto){
-     $Query = "INSERT INTO productos (titulo_producto, info_producto, precio_producto, envio_producto, estado_producto, imagen_producto) VALUES ('".$tituloProducto."', '".$informacionProducto."', '".$precioProducto."', '".$envioProducto."', '".$estadoProducto."', '".$imgProducto."')";
+function addProducto($tituloProducto,$informacionProducto,$botonCompra,$precioProducto,$envioProducto,$estadoProducto,$imgProducto){
+     $Query = "INSERT INTO productos (titulo_producto, info_producto, boton_producto, precio_producto, envio_producto, estado_producto, imagen_producto) VALUES ('".$tituloProducto."', '".$informacionProducto."', '".$botonCompra."', '".$precioProducto."', '".$envioProducto."', '".$estadoProducto."', '".$imgProducto."')";
      //die($Query);                
      $res = mysql_query($Query);       
      return $res;
         }
  
-function updateProducto($idProducto,$tituloProducto,$informacionProducto,$precioProducto,$envioProducto,$estadoProducto,$imgProducto){
-    $query = "UPDATE productos SET titulo_producto = '".$tituloProducto."', info_producto = '".$informacionProducto."' ,precio_producto = '".$precioProducto."', envio_producto = '".$envioProducto."', estado_producto = '".$estadoProducto."', imagen_producto = '".$imgProducto."' WHERE  id_producto ='".$idProducto."'";
+function updateProducto($idProducto,$tituloProducto,$informacionProducto,$botonCompra,$precioProducto,$envioProducto,$estadoProducto,$imgProducto){
+    $query = "UPDATE productos SET titulo_producto = '".$tituloProducto."', info_producto = '".$informacionProducto."', boton_producto = '".$botonCompra."' ,precio_producto = '".$precioProducto."', envio_producto = '".$envioProducto."', estado_producto = '".$estadoProducto."', imagen_producto = '".$imgProducto."' WHERE  id_producto ='".$idProducto."'";
     //die($query);
     $result=mysql_query($query);
     return $result;
