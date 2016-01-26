@@ -149,7 +149,9 @@
 
 .smallcurso-img{
 	width: 100%;
-	float: left;
+    float: left;
+    height: 115px;
+    overflow: hidden;
 }
 
 .smallcurso-img img{

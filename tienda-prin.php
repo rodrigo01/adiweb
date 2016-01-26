@@ -1,4 +1,3 @@
-<?php include('administrador/models/productos.php'); ?>
 <div class="fullcont">
 	<div>
 		<h2>TIENDA ONLINE</h2>

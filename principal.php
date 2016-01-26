@@ -1,10 +1,6 @@
 <?php
 //cargamos los modelos que usaremos en este sitio
-include('administrador/models/sliders.php');
-include('administrador/models/contenidos.php');
-include('administrador/models/actividades.php');
-include('administrador/models/testimonios.php');
-include('administrador/models/contactos.php');
+include('administrador/corelib.php');
 
 //cargamod modelos
 $Sliders = new Sliders();

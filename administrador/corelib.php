@@ -23,5 +23,7 @@ include('models/testimonios.php');
 include('models/contactos.php');
 include('models/nosotros.php');
 include('models/productos.php');
+include('models/calendario.php');
+include('models/contenidos.php');
 
 ?>

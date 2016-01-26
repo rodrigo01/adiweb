@@ -6,55 +6,57 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="row">
+	<?php
+	// variables base
+	$fechas = array();
+	$anio = 0;
+	$mes = 0;
+	$doa = 0;
+	$meses = array('','Enero','Febrero','Marzo', 'Abril', 'Mayo', 'Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
+
+	// procedimiento de array fechas
+	$Calendarios = new Calendarios();
+	$resCalendario = $Calendarios->getCalendario();
+	while ($calendario = mysql_fetch_array($resCalendario)){
+		list($anio,$mes,$dia) = explode("-", $calendario['fecha_calendario']);
+		//echo '##'.$calendario['fecha_calendario'];
+		$fechas[$anio][intval($mes)][intval($dia)] = $calendario;
+	}
+	$anio_actual = 2016;
+	foreach($fechas[$anio_actual] as $mes=>$datomes){
+		?>
 		<div class="col-xs-6 col-sm-4">
 			<div class="calmes">
 				<div class="redbox">
-					ENERO 2016
+					<?php echo $meses[$mes].' '.$anio_actual;?>
 				</div>
 				<div class="caldata">
 					<ul>
-					<li><a href="index.php?secc=curso-activando-prosperidad">9 y 10 : Activando tu Prosperidad - Mexicali (ARTURO ARELLANO)</a></li>
-					<li><a href="index.php?secc=curso-juventud-plenitud">2 y 23 : Juventud en Plenitud - Mexicali (ARTURO ARELLANO)</a></li>
-					<li><a href="index.php?secc=curso-jugando-aprendo">2 y 23 : Jugando aprendo - Mexicali (ARTURO ARELLANO)</a></li>
-					<li><a href="#">30 y 31 : Diplomado en comunicaci&oacute;n  - Mexicali (ARTURO ARELLANO)</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-6 col-sm-4">
-			<div class="calmes">
-				<div class="redbox">
-					FEBRERO 2016
-				</div>
-				<div class="caldata">
-					<ul>
-					<ul>
-					<li><a href="index.php?secc=curso-activando-prosperidad">9 y 10 : Activando tu Prosperidad - Mexicali (ARTURO ARELLANO)</a></li>
-					<li><a href="index.php?secc=curso-juventud-plenitud">2 y 23 : Juventud en Plenitud - Mexicali (ARTURO ARELLANO)</a></li>					
-					<li><a href="#">28 y 29 : Diplomado en comunicaci&oacute;n  - Mexicali (ARTURO ARELLANO)</a></li>
-					</ul>
+					<?php
+						foreach($datomes as $dia=>$datodia){
+					?>
+						<li><a href="seccion.php?seccion=<?php echo $datodia['seccion_actividad']?>"><?php echo $dia;?> : <?php echo $datodia['nombre_actividad']?></a></li>
+					<?
+						}
+					?>
 					</ul>
 				</div>
 			</div>
 		</div>
 
-		<div class="col-xs-6 col-sm-4">
-			<div class="calmes">
-				<div class="redbox">
-					MARZO 2016
-				</div>
-				<div class="caldata">
-					<ul>
-					<li><a href="index.php?secc=curso-foto-lectura">19 y 20 : Fotolectura<a></li>
-                                        <li><a href="index.php?secc=curso-foto-lectura">21 y 22 : Fotolectura<a></li>
-                                        <li><a href="index.php?secc=curso-foto-lectura">28 y 29 : Fotolectura<a></li>
-					</ul>
-				</div>
-			</div>
-		</div>		
+		<?
+		}
+	?>
 	</div>
+
+
+
+
+	
+	
+		
 	
 	
 </div>
