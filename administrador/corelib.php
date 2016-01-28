@@ -25,5 +25,6 @@ include('models/nosotros.php');
 include('models/productos.php');
 include('models/calendario.php');
 include('models/contenidos.php');
+include('models/inscripciones.php');
 
 ?>

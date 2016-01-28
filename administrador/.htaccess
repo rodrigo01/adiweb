@@ -15,3 +15,4 @@ RewriteRule ^calendario(.*)$ /administrador/index.php?control=calendario&action=
 RewriteRule ^testimonio(.*)$ /administrador/index.php?control=testimonio&action=$1
 RewriteRule ^contacto(.*)$ /administrador/index.php?control=contacto&action=$1
 RewriteRule ^nosotros(.*)$ /administrador/index.php?control=nosotros&action=$1
+RewriteRule ^inscripcion(.*)$ /administrador/index.php?control=inscripcion&action=$1
