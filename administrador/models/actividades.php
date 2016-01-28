@@ -9,8 +9,8 @@ class Actividades{
      return $res;
  }
  
- function updateActividad($id_actividad,$nombre_actividad,$costo_actividad,$costo_actividad,$contenido_actividad,$tipo_actividad,$fecha_actividad,$fecha_inicio_actividad,$fecha_fin_actividad,$estado_actividad){
-    $query = "UPDATE actividades SET nombre_actividad = '".$nombre_actividad."', costo_actividad = '".$costo_actividad."', contenido_actividad = '".$contenido_actividad."', tipo_actividad = '".$tipo_actividad."', fecha_actividad = '".$fecha_actividad."', fecha_inicio_actividad = '".$fecha_inicio_actividad."', fecha_fin_actividad = '".$fecha_fin_actividad."', estado_actividad = '".$estado_actividad."' WHERE  id_actividad='".$id_actividad."'";
+ function updateActividad($id_actividad,$nombre_actividad,$costo_actividad,$costo_actividad,$contenido_actividad,$imgActividad,$imgThumbnail,$tipo_actividad,$fecha_actividad,$fecha_inicio_actividad,$fecha_fin_actividad,$estado_actividad){
+    $query = "UPDATE actividades SET nombre_actividad = '".$nombre_actividad."', costo_actividad = '".$costo_actividad."', contenido_actividad = '".$contenido_actividad."', img_actividad = '".$imgActividad."', thumbnail_actividad = '".$imgThumbnail."', tipo_actividad = '".$tipo_actividad."', fecha_actividad = '".$fecha_actividad."', fecha_inicio_actividad = '".$fecha_inicio_actividad."', fecha_fin_actividad = '".$fecha_fin_actividad."', estado_actividad = '".$estado_actividad."' WHERE  id_actividad='".$id_actividad."'";
     //die($query);
     $result=mysql_query($query);
     return $result;
