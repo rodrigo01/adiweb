@@ -109,7 +109,7 @@ if($action=='/addactividad'){
     
     if($archivoResultadoThumbnail['status']==1){
         // la subida es correcta
-        $imgThumbnail = $archivoResultadoThumbnail ['filename'];
+        $imgThumbnail = $archivoResultadoThumbnail['filename'];
     }else{
         $errors[] = 'Error en subida de archivo/ talvez no se subio';
     }
@@ -168,7 +168,34 @@ if($action=='updateactividad'){
     $fecha_fin_actividad = $_POST['fechaFin'];
     $estado_actividad = $_POST['estadoActividad'];
     
-    $Actividades = $Actividades->updateActividad($id_actividad,$nombre_actividad,$costo_actividad,$costo_actividad,$contenido_actividad,$tipo_actividad,$fecha_actividad,$fecha_inicio_actividad,$fecha_fin_actividad,$estado_actividad);
+    // cargamos classe para subir archivos y definimos que nos agregue el tiempo al final 
+    //(para evitar que existan archivos duplicadas y no nos rompa el proceso)
+    $Uploads = new Uploads();
+    $Uploads->addtime = 1;
+    
+    /////////////////////////////////////
+    // cargamos la imagen
+    $archivoResultado = $Uploads->doUpload('fileToUpload','../images/'); // el primero corresponde a que $_FILES['fileToUpload'] y el segundo a la ruta de subida
+    
+    if($archivoResultado['status']==1){
+        // la subida es correcta
+        $imgActividad = $archivoResultado['filename'];
+    }else{
+        $errors[] = 'Error en subida de archivo/ talvez no se subio';
+    }
+    
+    //////////////////////////////////////
+    // cargamos la imagen Thumbnail
+    $archivoResultadoThumbnail = $Uploads->doUpload('fileToUploadThumbnail','../images/'); // el primero corresponde a que $_FILES['fileToUpload'] y el segundo a la ruta de subida
+    
+    if($archivoResultadoThumbnail['status']==1){
+        // la subida es correcta
+        $imgThumbnail = $archivoResultadoThumbnail ['filename'];
+    }else{
+        $errors[] = 'Error en subida de archivo/ talvez no se subio';
+    }
+    
+    $Actividades = $Actividades->updateActividad($id_actividad,$nombre_actividad,$costo_actividad,$costo_actividad,$contenido_actividad,$imgActividad,$imgThumbnail,$tipo_actividad,$fecha_actividad,$fecha_inicio_actividad,$fecha_fin_actividad,$estado_actividad);
     header('Location: '.$baseurl.'administrador/actividad/lista');
 }
 
