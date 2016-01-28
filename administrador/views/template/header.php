@@ -49,8 +49,7 @@
           <a class="navbar-brand" href="<?php echo $baseurl;?>administrador/">Panel de Control</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Perfil</a></li>
+          <ul class="nav navbar-nav navbar-right">           
             <li><a href="<?php echo $baseurl;?>administrador/login/logout">Salir</a></li>
           </ul>
         </div>
@@ -66,6 +65,7 @@
             <li><a href="<?php echo $baseurl?>administrador/slider">Sliders</a></li>
             <li><a href="<?php echo $baseurl?>administrador/contacto/lista">Contactos</a></li>
             <li><a href="<?php echo $baseurl?>administrador/actividad/lista">Cursos y/o Talleres</a></li>
+            <li><a href="<?php echo $baseurl?>administrador/inscripcion/lista">Alumnos Registrados en Cursos y Talleres</a></li>
             <li><a href="#">Calendario</a></li>
             <li><a href="<?php echo $baseurl?>administrador/testimonio/lista">Testimonios</a></li>
             <li><a href="<?php echo $baseurl?>administrador/nosotros/lista">Nosotros</a></li>
