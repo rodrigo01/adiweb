@@ -1,5 +1,19 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script> 
 <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
+<script language="JavaScript">
+        function validar_imagen() {            
+        
+        var cla1 = document.formulario.fileToUpload.value;
+        var cla2 = document.formulario.fileToUploadThumbnail.value;
+       
+        if (cla1 == cla2){
+            alert ("El archivo Imagen (Thumbnail) es el mismo introducido en el campo anterior subir imagen. Por favor introduzca el thumbnail correcto");
+            return false;
+        }else{
+            return true;
+        }
+        }
+</script>
 <script>
     webshims.setOptions('waitReady', false);
     webshims.setOptions('forms-ext', {types: 'date'});
@@ -7,7 +21,7 @@
 </script>
 
 <h3>Modificar Actividad</h3>
-	<form action="<?php echo $baseurl;?>administrador/actividad/updateactividad" method="POST" enctype="multipart/form-data">
+	<form action="<?php echo $baseurl;?>administrador/actividad/updateactividad" name=formulario method="POST" onSubmit="return validar_imagen()" method="POST" enctype="multipart/form-data">
 		<div class="form-group"><div class="row">
 			<div class="col-md-2">Titulo de la Actividad</div>		
 			<div class="col-md-4"> <input type="text" name="nombreActividad" value="<?php echo $actividad['nombre_actividad']; ?>" class="form-control" required/><input type="hidden" name="idActividad" value="<?php echo $actividad['id_actividad']; ?>" class="form-control" required/></div>

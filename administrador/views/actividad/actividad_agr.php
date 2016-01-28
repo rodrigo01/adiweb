@@ -68,8 +68,7 @@
         
 <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
 <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
-<head>
-  <script language="JavaScript">
+<script language="JavaScript">
         function validar_imagen() {            
         
         var cla1 = document.formulario.fileToUpload.value;
@@ -83,4 +82,3 @@
         }
         }
 </script>
-</head>
