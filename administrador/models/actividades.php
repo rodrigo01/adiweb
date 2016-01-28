@@ -2,8 +2,8 @@
 
 class Actividades{
     
- function AddActividad($nombreActividad,$costoActividad,$contenidoActividad,$imgActividad,$tipoActividad,$fechaActividad,$fechaInicio,$fechaFin,$estadoActividad,$nombreActividad){
-     $Query = "INSERT INTO actividades (nombre_actividad, costo_actividad, contenido_actividad, img_actividad, tipo_actividad, fecha_actividad, fecha_inicio_actividad, fecha_fin_actividad, estado_actividad, seccion_actividad) VALUES ('".$nombreActividad."', '".$costoActividad."', '".$contenidoActividad."', '".$imgActividad."', '".$tipoActividad."', '".$fechaActividad."', '".$fechaInicio."', '".$fechaFin."', '".$estadoActividad."', '".$nombreActividad."')";
+ function AddActividad($nombreActividad,$costoActividad,$contenidoActividad,$imgActividad,$imgThumbnail,$tipoActividad,$fechaActividad,$fechaInicio,$fechaFin,$estadoActividad,$nombreActividadGuion){
+     $Query = "INSERT INTO actividades (nombre_actividad, costo_actividad, contenido_actividad, img_actividad, thumbnail_actividad ,tipo_actividad, fecha_actividad, fecha_inicio_actividad, fecha_fin_actividad, estado_actividad, seccion_actividad) VALUES ('".$nombreActividad."', '".$costoActividad."', '".$contenidoActividad."', '".$imgActividad."', '".$imgThumbnail."','".$tipoActividad."', '".$fechaActividad."', '".$fechaInicio."', '".$fechaFin."', '".$estadoActividad."', '".$nombreActividadGuion."')";
      //die($Query);                
      $res = mysql_query($Query);       
      return $res;
