@@ -17,7 +17,7 @@
 		</div>
 		</div><div class="form-group"><div class="row">
 			<div class="col-md-2">Codigo HTML para Boton de Compra</div>
-                        <div class="col-md-4"> <textarea class="form-control" name="botonCompra" id="">Copie y Pegue Aqui el Codigo HTML Para Generar Boton de Compra</textarea></div>
+                        <div class="col-md-4"> <textarea class="form-control" rows="10" cols="40" name="botonCompra" id="">Copie y Pegue Aqui el Codigo HTML Para Generar Boton de Compra</textarea></div>
 		</div>
 		</div><div class="form-group"><div class="row">
 			<div class="col-md-2">Precio del Producto</div>		

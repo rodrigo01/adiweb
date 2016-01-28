@@ -18,7 +18,7 @@
 		</div>
 		</div><div class="form-group"><div class="row">
 			<div class="col-md-2">HTML de Boton de Compra</div>
-                        <div class="col-md-4"> <textarea class="form-control" name="botonCompra"><?php echo $producto['boton_producto'] ?></textarea></div>
+                        <div class="col-md-4"> <textarea class="form-control" rows="10" cols="40" name="botonCompra"><?php echo $producto['boton_producto'] ?></textarea></div>
 		</div>
 		</div><div class="form-group"><div class="row">
 			<div class="col-md-2">Precio del Producto</div>		
