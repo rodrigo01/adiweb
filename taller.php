@@ -49,7 +49,7 @@
                 ?>
 		<div class="col-xs-6 col-sm-3">
 			<div class="smallcurso">
-				<div class="smallcurso-img"><a href="seccion.php?seccion=<?php echo $datos['seccion_actividad'] ?>"><img width="270" height="137" src="images/<?php echo $datos['img_actividad']?>"></a></div>
+				<div class="smallcurso-img"><a href="seccion.php?seccion=<?php echo $datos['seccion_actividad'] ?>"><img width="270" height="137" src="images/<?php echo $datos['thumbnail_actividad']?>"></a></div>
 				<div class="smallcurso-txt"><a href="seccion.php?seccion=<?php echo $datos['seccion_actividad'] ?>"><?php echo $datos['nombre_actividad']?></a></div>
 				<div class="smallcurso-sub"><?php echo $datos['fecha_actividad']?></div>
 			</div>
