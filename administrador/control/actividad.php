@@ -31,6 +31,14 @@ if($action=='/addactividad'){
     }
     
     //////////////////////////////////////////////////////////////
+    if(isset($_POST['nombreActividad']) and strlen(trim($_POST['nombreActividad']))>=3){
+		$nombreActividad = $_POST['nombreActividad'];
+                $nombreActividadGuion= str_replace(" ", "-", $nombreActividad);
+    }else{
+		$errors[] = 'Error';
+    }
+    
+    //////////////////////////////////////////////////////////////
     if(isset($_POST['costoActividad']) and strlen(trim($_POST['costoActividad']))>=3){
 		$costoActividad = $_POST['costoActividad'];
     }else{
@@ -84,6 +92,7 @@ if($action=='/addactividad'){
     $Uploads = new Uploads();
     $Uploads->addtime = 1;
 
+    /////////////////////////////////////
     // cargamos la imagen
     $archivoResultado = $Uploads->doUpload('fileToUpload','../images/'); // el primero corresponde a que $_FILES['fileToUpload'] y el segundo a la ruta de subida
     
@@ -94,12 +103,22 @@ if($action=='/addactividad'){
         $errors[] = 'Error en subida de archivo/ talvez no se subio';
     }
     
+    //////////////////////////////////////
+    // cargamos la imagen Thumbnail
+    $archivoResultadoThumbnail = $Uploads->doUpload('fileToUploadThumbnail','../images/'); // el primero corresponde a que $_FILES['fileToUpload'] y el segundo a la ruta de subida
+    
+    if($archivoResultadoThumbnail['status']==1){
+        // la subida es correcta
+        $imgThumbnail = $archivoResultadoThumbnail ['filename'];
+    }else{
+        $errors[] = 'Error en subida de archivo/ talvez no se subio';
+    }
+    
+    ////////////////////////////////////////////////////////////////////////////////////
     if(sizeof($errors)==0){ 
         $objActividad = new Actividades();
-        //$res = $objActividad->getActividadXSeccion($_POST['nombreActividad']); // buscas una actividad por nombres pero es seccion?
-        //$seccion_actividad = $datos['seccion_actividad'];
-        
-        $res = $objActividad->AddActividad($_POST['nombreActividad'], $_POST['costoActividad'], $_POST['contenidoActividad'], $imgActividad, $_POST['tipoActividad'], $_POST['fechaActividad'], $_POST['fechaInicio'], $_POST['fechaFin'], $_POST['estadoActividad'], $_POST['nombreActividad']);
+       
+        $res = $objActividad->AddActividad($_POST['nombreActividad'], $_POST['costoActividad'], $_POST['contenidoActividad'], $imgActividad, $imgThumbnail, $_POST['tipoActividad'], $_POST['fechaActividad'], $_POST['fechaInicio'], $_POST['fechaFin'], $_POST['estadoActividad'], $nombreActividadGuion);
         header('Location: '.$baseurl.'administrador/actividad/lista');
     }else{
         header('Location: '.$baseurl.'administrador');

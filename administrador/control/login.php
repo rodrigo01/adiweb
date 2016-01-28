@@ -28,8 +28,12 @@ if($action=='/dologin'){
 		// si todo esta bien lo redirigira al administrador
 		header('Location: '.$baseurl.'administrador/');
 	}else{
-		//no existe usuario
-		header('Location: '.$baseurl.'administrador/login/incorrecto');
+            ?>
+           <script>
+            alert('Login Incorrecto');
+            document.location=('http://www.arturoarellano.com/administrador/');
+           </script>
+           <?php
 	}
 }
 
