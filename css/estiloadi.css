@@ -533,3 +533,12 @@ text-align: center;
 	text-align: right;
 	font-weight: bold;
 }
+
+.inscripciones_modificar{
+    display:inline-block
+}
+
+.inscripciones_eliminar{
+   display:inline-block;
+   margin-top:5px;
+}
