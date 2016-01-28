@@ -22,7 +22,7 @@
   <tr>
     <td><?php echo $datos['nombre_actividad']; ?></td>
     <td><?php echo $datos['costo_actividad']; ?></td>
-    <td><img width="270" height="137" src="<?php echo $baseurl; ?>images/<?php echo $datos['img_actividad']?>"></td>
+    <td><img width="270" height="137" src="<?php echo $baseurl; ?>images/<?php echo $datos['thumbnail_actividad']?>"></td>
     <td><?php echo $datos['tipo_actividad']; ?></td>
     <td>
       <a class="btn btn-info" href="<?php echo $baseurl.'administrador/actividad/editaractividad/'.$datos['id_actividad']?>">Modificar</a>&nbsp; 

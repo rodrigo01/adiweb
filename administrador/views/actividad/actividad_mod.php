@@ -21,6 +21,14 @@
             <div class="col-md-4"> <textarea class="form-control" name="contenidoActividad" id="" required><?php echo $actividad['contenido_actividad']; ?></textarea></div>
 		</div>
 		</div><div class="form-group"><div class="row">
+			<div class="col-md-2">Subir Imagen</div>
+			<div class="col-md-4">  <input type="file" name="fileToUpload" id="fileToUpload" required></div>
+		</div>
+		</div><div class="form-group"><div class="row">
+			<div class="col-md-2">Subir Imagen (Thumbnail)</div>
+			<div class="col-md-4">  <input type="file" name="fileToUploadThumbnail" id="fileToUploadThumbnail" required></div>
+		</div>
+		</div><div class="form-group"><div class="row">
 			<div class="col-md-2">Tipo de Actividad</div>
 			<div class="col-md-4"> 
                             <select name="tipoActividad" class="form-control" id="" required>
