@@ -34,9 +34,9 @@
     <div class="container">
 
       <form class="form-signin" action="<?php echo $baseurl;?>administrador/login/dologin" method="POST">
-        <h2 class="form-signin-heading">Inicia Session</h2>
+        <h2 class="form-signin-heading">Inicia Sesion</h2>
         <label for="inputEmail" class="sr-only">Usuario</label>
-        <input name="username" type="text" id="inputEmail" class="form-control" placeholder="Usuario" required autofocus>
+        <input name="username" style="margin-bottom:10px" type="text" id="inputEmail" class="form-control" placeholder="Usuario" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar</button>
