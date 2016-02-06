@@ -15,10 +15,10 @@
 <div class="fullcont margtop">
 	<div id="boxnosotros" class="testimonicent">
 		<div class="row">
-			<div class="col-xs-6">
+			<div class="col-xs-12 col-md-6">
 				<iframe width="464" height="315" src="<?php echo $datos['video_testimonio']?>" frameborder="0" allowfullscreen></iframe>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-xs-12 col-md-6">
 				<div class="row">
 						<div class="col-md-4" style="">
 							<img src="images/Comillas_Testimonio.png">
