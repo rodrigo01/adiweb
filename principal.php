@@ -10,87 +10,80 @@ $Contenidos = new Contenidos();
 $slider_list = $Sliders->getSliders();
 
 ?>
+<div class="row">
+	<div class="col-md-12">
+		<div id="homeslider fishslider">
+			<ul class="fish_slide">
+				<?php 
+				$imageneschicas = '';
+				$i = 0;
+				while($slider = mysql_fetch_array($slider_list)){
+					//generamos imagen chica
+					$imageneschicas.="imagen[".$i."] = '".$slider['preview_slider']."';\n";
+					$i++;
+				?>
+					<li><a href="<?php echo $slider['enlace_slider'];?>"><img alt="<?php echo $slider['nombre_slider'];?>" src="<?php echo $slider['imagen_slider'];?>"></a></li>
+				<?php }?>
+			</ul>
+			<div class="fish_thumbs">
 
-<div id="homeslider">
-	<ul class="bjqs">
-		<?php 
-		$imageneschicas = '';
-		$i = 0;
-		while($slider = mysql_fetch_array($slider_list)){
-			//generamos imagen chica
-			$imageneschicas.="imagen[".$i."] = '".$slider['preview_slider']."';\n";
-			$i++;
-		?>
-			<li><a href="<?php echo $slider['enlace_slider'];?>"><img alt="<?php echo $slider['nombre_slider'];?>" src="<?php echo $slider['imagen_slider'];?>"></a></li>
-		<?php }?>
-	</ul>
-</div>
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-
-
-
-	$('#homeslider').bjqs({
-		'height' : 480,
-		'width' : 1000,
-		'showcontrols' : false, 
-		'responsive' : true,
-		'showmarkers' : true
-	});
-	var imagen = new Array("Saab", "Volvo", "BMW");
-	<?php
-		echo $imageneschicas; //imagenes chicas de slider
-	?>
-
-	var i = 0;
-	$('.bjqs-markers').find('li').each(function(){
-
-		$(this).html('<a href="#"><img src="'+imagen[i]+'"></a>');
-		i++;
-
-	});
-
-});
-</script>
-<style>
-.bjqs-markers{
-	    float: left;
-}
-</style>
-
-<div style="display:none;" class="row minibancont">
-	<div class="col-xs-6 col-md-4 minibans">
-		<a href="#"><img src="images/Material_WEB_preview-Jugando.jpg"></a>
+			</div>
+		</div>
 	</div>
-	<div class="col-xs-6 col-md-4 minibans">
-		<a href="#"><img src="images/Material_WEB_preview-Juventud.jpg"></a>
-	</div>
-	<div class="col-xs-6 col-md-4 minibans">
-		<a href="#"><img src="images/Material_WEB_preview-Fotolectura.jpg"></a>
-	</div>
+	
 </div>
 
 
-<div class="fullcont bordtb">
 <?php include ('nosotros-prin.php');?>
-</div>
 
-<div class="fullcont bordtb">
+
+
 <?php include ('curso-taller-prin.php');?>
-</div>
 
-<div class="fullcont bordtb">
+
 <?php include ('testimonios-prin.php');?>
-</div>
 
-<div class="fullcont bordtb">
+
+
 <?php include ('tienda-prin.php');?>
-</div>
 
-<div class="fullcont bordtb">
+
 <?php include ('calendario-prin.php');?>
-</div>
 
-<div class="fullcont bordtb">
+
+
 <?php include ('contacto-prin.php');?>
-</div>
+
+
+
+<script type="text/javascript">
+	// desaparecemos todos
+	var tiempo = 6000;
+	var slide_pos = 0;
+	var limite = 2;
+	var heigthfish = 455;
+
+
+	$('.fish_slide li').css('display','none');
+	// ejecutamos el primero
+	$( ".fish_slide li" ).each(function( index ) {
+		if(index==0){
+			$(this).css('display','block');
+		}
+	});
+
+	function fish_slider_next(){
+		slide_pos++;
+		if(limite<slide_pos){
+			slide_pos = 0;
+		}
+	  	$( ".fish_slide li" ).each(function( index ) {
+	  		$(this).css('display','none');
+			if(index==slide_pos){
+				$(this).fadeIn();
+			}
+		});
+		setTimeout(fish_slider_next, tiempo);
+	}
+	setTimeout(fish_slider_next, tiempo);
+</script>

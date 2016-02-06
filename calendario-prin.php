@@ -27,7 +27,7 @@
 	$anio_actual = 2016;
 	foreach($fechas[$anio_actual] as $mes=>$datomes){
 		?>
-		<div class="col-xs-6 col-sm-4">
+		<div class="col-xs-12 col-sm-6 col-md-4">
 			<div class="calmes">
 				<div class="redbox">
 					<?php echo $meses[$mes].' '.$anio_actual;?>
@@ -50,13 +50,4 @@
 		}
 	?>
 	</div>
-
-
-
-
-	
-	
-		
-	
-	
 </div>
