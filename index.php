@@ -3,19 +3,15 @@ include('config-site.php');
 ?>
 <html>
 <head>
-    <meta charset="utf-8">
+	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>ADi</title>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/estiloadi.css">
-	<!-- Include the plugin *after* the jQuery library -->
 	<script src="js/bjqs-1.3.min.js"></script>
-	<!-- Include the basic styles -->
 	<link type="text/css" rel="Stylesheet" href="bjqs.css" />
 </head>
 <body>
@@ -43,15 +39,6 @@ include('config-site.php');
 				<div id="logocont">
 					<img src="images/logotop.png">
 				</div>
-				<!-- codigo
-				<div id="searchtop">
-					<div>
-						<a href="#"><img src="images/searchbtn.png"></a>
-						<input type="text" placeholder="Buscar cursos">
-					</div>
-				</div>
-
-				-->
 			</div>
 		</div>
 	</div>
