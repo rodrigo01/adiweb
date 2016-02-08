@@ -4,7 +4,7 @@
   if ($datos = mysql_fetch_array($res)){
 ?>
 <div class="fullcont">
-	<div id="boxnosotros" style="padding:15px;">
+	<div id="boxnosotros" style="padding:15px;margin-top:15px">
 		<h1 style="text-align: center; font-weight: bold;">CONT&Aacute;CTANOS</h1>
 		<div class="row">
 			<div class="col-xs-12 col-md-6">

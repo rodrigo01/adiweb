@@ -40,14 +40,15 @@
 											Tiempo de envio: <?php echo $datos['envio_producto']?>
 										</p>
 									</div>                                                                     									
-								</div>
-                                                                <div>
+								</div>                                                               
+							</div>                                                         
+						</div>
+                                                <div class="col-md-6">
+							<div class="wbg">								
+                                                                <div style="padding-left:45px; padding-top: 15px; padding-bottom: 8px">
                                                                     <?php echo $datos['boton_producto']?>
-                                                                </div>
-                                                                <!--<div class="addtocart">
-								   <a href="#" class="btn-insc">COMPRAR</a>
-								</div>-->
-							</div>                                                        
+                                                                </div>                                                                                            
+							</div>                                                         
 						</div>
 					</div>
 				</div>
