@@ -129,14 +129,18 @@
 }
 
 .curso-prin-fecha{
-	font-size: 18px;
-	font-weight: bold;
-	color: #a0a1a1;
-	text-align: center;
+	color:#A0A1A1;
+        float:left;
+        font-size:15px;
+        font-weight:bold;
+        text-align:center;
+        margin-top:30px;
 }
 
 .curso-prin-ins{
-	text-align: center;
+	float:right;
+        margin-top:-40px;
+        text-align:center;
 }
 
 .prin-detalle h2{
